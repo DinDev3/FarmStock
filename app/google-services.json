@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1050892424692",
+    "firebase_url": "https://farmstock-e2ecf.firebaseio.com",
+    "project_id": "farmstock-e2ecf",
+    "storage_bucket": "farmstock-e2ecf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050892424692:android:1c7d6f30522e5491c715a1",
+        "android_client_info": {
+          "package_name": "lk.techiebuild.farmstock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050892424692-q6uujc5kp0t0oup30gklsbd7kkbrujbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqLEHEBvjV9meB5UrXeyDX0dtJnfh_vqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050892424692-q6uujc5kp0t0oup30gklsbd7kkbrujbb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
