@@ -20,9 +20,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class MainActivity extends AppCompatActivity {
 
     // Access a Cloud Firestore instance from your Activity
-    DocumentReference mDocRef = FirebaseFirestore.getInstance().document("itemsInStore/IPhIJekwM4cpHz1YLYP7");
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-//    private static final String TAG = "DocSnippets";
+    private static final String TAG = "DocSnippets";
 
     TextView mQuoteTextView;
 
@@ -34,31 +34,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void fetchContent(View view){
-//        db.collection("itemsInStore")
-//                .get()
-//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            for (QueryDocumentSnapshot document : task.getResult()) {
+        db.collection("itemsInStore")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
 //                                Log.d(TAG, document.getId() + " => " + document.getData());
-//                            }
-//                        } else {
-//                            Log.w(TAG, "Error getting documents.", task.getException());
-//                        }
-//                    }
-//                });
+                                Log.d(TAG, document.getString("Farmer"));
+                            }
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
-        mDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if(documentSnapshot.exists()){
-                    String quoteText = documentSnapshot.getString("Item Name");
 
-                    mQuoteTextView.setText(quoteText);
-                }
-            }
-        });
 
     }
 }
